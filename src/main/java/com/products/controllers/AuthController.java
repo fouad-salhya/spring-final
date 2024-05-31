@@ -1,6 +1,8 @@
 package com.products.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.products.entities.UserEntity;
+import com.products.repository.UserRespository;
 import com.products.requests.UserRequest;
 import com.products.services.UserServiceImpl;
 
@@ -19,6 +22,7 @@ import com.products.services.UserServiceImpl;
 @Controller
 @RequestMapping("/auth")
 public class AuthController {
+	
 	
 	@Autowired
 	UserServiceImpl userService;
@@ -48,6 +52,8 @@ public class AuthController {
 
 		
 	}
+	
+	
 	
 
 }

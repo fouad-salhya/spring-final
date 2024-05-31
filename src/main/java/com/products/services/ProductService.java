@@ -73,7 +73,7 @@ public class ProductService {
         	DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMMM yyyy 'à' HH:mm");
             String formattedDate = reservation.getReservationDate().format(formatter);
         	
-            helper.setTo(reservation.getEmail());
+            helper.setTo(reservation.getUsername());
             helper.setSubject("Confirmation de reservation d'une table from Restoran");
             
             String htmlContent = "<h4>Bonjour " + reservation.getName() + ",</h4>" +

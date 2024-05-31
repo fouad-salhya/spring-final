@@ -10,6 +10,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -31,6 +33,7 @@ import com.products.entities.ProductEntity;
 import com.products.entities.ReservationEntity;
 import com.products.entities.Type;
 import com.products.entities.UserEntity;
+import com.products.repository.UserRespository;
 import com.products.requests.ProductRequest;
 import com.products.responses.ProductResponse;
 
@@ -39,6 +42,7 @@ import com.products.services.ProductService;
 @Controller
 @RequestMapping("/restoran")
 public class ProductController {
+	
 	
 	@Autowired
 	ProductService productService;
@@ -64,9 +68,7 @@ public class ProductController {
         
 		return "index";
 	}
-	
-	
-	
+		
 	
 	@GetMapping("/product/detail/{id}")
 	public String detailProduct(@PathVariable long id, Model model) {

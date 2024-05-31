@@ -29,7 +29,7 @@ public class SecurityConfig {
 				.csrf(cf -> cf.disable())
 			    .authorizeHttpRequests(req -> req.requestMatchers("/auth/**").permitAll())
 			    .authorizeHttpRequests( res -> res.requestMatchers("/css/**", "/js/**", "/lib/**", "/img/**").permitAll())
-			    .authorizeHttpRequests(req -> req.requestMatchers("/restoran/**").permitAll())
+			    .authorizeHttpRequests(req -> req.requestMatchers("/restoran/**").authenticated())
 			    .formLogin(form -> form
                      .loginPage("/auth/login")
                      .loginProcessingUrl("/auth/login")
