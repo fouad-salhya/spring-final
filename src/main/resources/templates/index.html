@@ -306,13 +306,13 @@
         <div class="row g-3">
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="text" class="form-control" th:field="*{fullname}" id="name" placeholder="Your Name">
+                    <input type="text" class="form-control" th:field="*{fullname}" id="fullname" name="fullname" placeholder="Your Name">
                     <label for="name">Your Name</label>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="form-floating">
-                    <input type="email" class="form-control" th:field="*{username}" id="username"  placeholder="Your Email">
+                    <input type="email" class="form-control" th:field="*{username}" id="username" name="username"  placeholder="Your Email">
                     <label for="username">Your Email</label>
                 </div>
             </div>
@@ -592,8 +592,8 @@
                 event.preventDefault();
 
                 var reservationData = {
-                    name: $("#name").val(),
-                    email: $("#email").val(),
+                    fullname: $("#fullname").val(),
+                    username: $("#username").val(),
                     reservationDate: $("#datetime").val(),
                     total_person: $("#select1").val(),
                     message: $("#message").val()

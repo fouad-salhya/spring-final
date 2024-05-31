@@ -76,7 +76,7 @@ public class ProductService {
             helper.setTo(reservation.getUsername());
             helper.setSubject("Confirmation de reservation d'une table from Restoran");
             
-            String htmlContent = "<h4>Bonjour " + reservation.getName() + ",</h4>" +
+            String htmlContent = "<h4>Bonjour " + reservation.getFullname() + ",</h4>" +
                   
                     "<h5>Merci pour votre réservation.</h5>"+
                     "<p>Nombre de personnes: " + reservation.getTotal_person() + "</p>" +
