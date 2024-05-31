@@ -39,7 +39,7 @@ public class CommandeService {
 		commandeEntity.setProductName(productEntity.get().getName());
 		
 		
-		CommandeEntity commande = commandeRepository.save(null);
+		CommandeEntity commande = commandeRepository.save(commandeEntity);
 		
 		return commande;
 		
